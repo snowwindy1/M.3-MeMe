@@ -1,82 +1,107 @@
-/* styles.css */
-
 /* ทั่วไป */
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #121212, #1e1e1e); /* พื้นหลังเป็นเกรเดียนต์ */
-    color: #e0e0e0; /* สีข้อความขาว */
+    background: linear-gradient(135deg, #e40303, #f37736, #fdf498, #7bd130, #004dff); /* พื้นหลังเป็นธง LGBTQ+ */
+    background-size: 100% 100%;
+    color: #fff; /* สีข้อความขาว */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; /* เต็มความสูงหน้าจอ */
 }
 
-/* สำหรับหน้าเล่นวีดีโอ */
-.container {
-    width: 90%;
-    max-width: 800px; /* ความกว้างสูงสุดของคอนเทนเนอร์ลดลง */
-    margin: 5% auto; /* ตั้งกลางและมีช่องว่างจากด้านบน */
-    padding: 20px;
-    background-color: #1e1e1e; /* สีพื้นหลังของคอนเทนเนอร์ */
+/* ฟอร์มล็อกอิน */
+.login-container {
+    background-color: rgba(0, 0, 0, 0.7); /* สีพื้นหลังของฟอร์มโปร่งใส */
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* เพิ่มเงา */
+    padding: 20px;
+    width: 90%;
+    max-width: 400px; /* ความกว้างสูงสุดของฟอร์ม */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
     text-align: center;
-    position: relative; /* ตั้งตำแหน่งของปุ่มย้อนกลับ */
 }
 
-/* หัวข้อ */
+/* หัวข้อของฟอร์ม */
 h1 {
-    color: #00bcd4; /* ฟ้าคราม */
+    color: #ff69b4; /* สีชมพูสด */
     margin-bottom: 20px;
+    font-size: 2rem; /* ขนาดข้อความ */
 }
 
-/* กรอบวิดีโอ */
-#video-container {
-    position: relative;
-    width: 100%;
-    max-width: 720px; /* ความกว้างสูงสุดของกรอบวิดีโอลดลง */
-    margin: auto; /* ตั้งกลาง */
-    padding-top: 56.25%; /* อัตราส่วน 16:9 */
-    background-color: #000; /* สีพื้นหลังของกรอบวิดีโอ */
-    border-radius: 15px; /* มุมโค้งมน */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* เพิ่มเงา */
-    overflow: hidden; /* ทำให้แน่ใจว่าวิดีโอไม่ล้นออกมา */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มเอฟเฟกต์เคลื่อนไหว */
+/* เลเบล */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #fff; /* สีข้อความของเลเบล */
 }
 
-#video-container:hover {
-    transform: scale(1.02); /* ขยายกรอบเมื่อวางเมาส์ */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9); /* ขยายเงาเมื่อวางเมาส์ */
+/* ฟิลด์การป้อนข้อมูล */
+input[type="text"], 
+input[type="password"] {
+    width: calc(100% - 24px); /* ปรับให้เต็มความกว้าง */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ff69b4; /* เส้นขอบสีชมพูสด */
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #fff; /* สีข้อความของฟิลด์ */
+    background-color: #333; /* พื้นหลังของฟิลด์ */
+    transition: border-color 0.3s ease; /* เพิ่มเอฟเฟกต์เคลื่อนไหว */
 }
 
-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* ปรับความสูงให้เต็มกรอบ */
-    border: none;
-    border-radius: 15px; /* มุมโค้งมน */
+input[type="text"]:focus, 
+input[type="password"]:focus {
+    border-color: #ff1493; /* สีเส้นขอบเมื่อโฟกัส */
+    outline: none; /* ลบเส้นขอบภายนอก */
 }
 
-/* ปุ่มย้อนกลับ */
-.back-button {
-    background-color: #00bcd4; /* ฟ้าคราม */
+/* ปุ่มล็อกอิน */
+button[type="submit"] {
+    background-color: #ff69b4; /* สีพื้นหลังของปุ่ม */
     color: #121212; /* สีข้อความดำ */
     border: none;
     border-radius: 10px;
     padding: 12px 24px;
-    font-size: 18px;
+    font-size: 1rem;
     cursor: pointer;
-    position: absolute; /* ตั้งตำแหน่งของปุ่ม */
-    top: 20px;
-    left: 20px;
     transition: background-color 0.3s ease, transform 0.3s ease; /* เพิ่มเอฟเฟกต์เคลื่อนไหว */
 }
 
-.back-button:hover {
-    background-color: #0097a7; /* ฟ้าครามเข้ม */
+button[type="submit"]:hover {
+    background-color: #ff1493; /* สีพื้นหลังเมื่อวางเมาส์ */
     transform: scale(1.05); /* ขยายปุ่มเมื่อวางเมาส์ */
+}
+
+/* ข้อความผิดพลาด */
+#error-message {
+    color: #ff69b4; /* สีข้อความผิดพลาด */
+    margin-top: 10px;
+}
+
+/* ลิงก์สมัครสมาชิก */
+a {
+    color: #ff69b4; /* สีลิงก์ */
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+a:hover {
+    text-decoration: underline; /* ขีดเส้นใต้เมื่อวางเมาส์ */
+}
+/* สำหรับหน้าเล่นวีดีโอ */
+.container {
+    width: 90%;
+    max-width: 1000px; /* เพิ่มความกว้างสูงสุดของคอนเทนเนอร์ */
+    margin: 5% auto; /* ตั้งกลางและมีช่องว่างจากด้านบน */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* สีพื้นหลังของคอนเทนเนอร์โปร่งใส */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* เพิ่มเงา */
+    text-align: center;
+    position: relative; /* ตั้งตำแหน่งของปุ่มย้อนกลับ */
 }
