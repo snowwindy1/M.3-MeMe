@@ -1,0 +1,82 @@
+/* styles.css */
+
+/* ทั่วไป */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #121212, #1e1e1e); /* พื้นหลังเป็นเกรเดียนต์ */
+    color: #e0e0e0; /* สีข้อความขาว */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* เต็มความสูงหน้าจอ */
+}
+
+/* สำหรับหน้าเล่นวีดีโอ */
+.container {
+    width: 90%;
+    max-width: 800px; /* ความกว้างสูงสุดของคอนเทนเนอร์ลดลง */
+    margin: 5% auto; /* ตั้งกลางและมีช่องว่างจากด้านบน */
+    padding: 20px;
+    background-color: #1e1e1e; /* สีพื้นหลังของคอนเทนเนอร์ */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* เพิ่มเงา */
+    text-align: center;
+    position: relative; /* ตั้งตำแหน่งของปุ่มย้อนกลับ */
+}
+
+/* หัวข้อ */
+h1 {
+    color: #00bcd4; /* ฟ้าคราม */
+    margin-bottom: 20px;
+}
+
+/* กรอบวิดีโอ */
+#video-container {
+    position: relative;
+    width: 100%;
+    max-width: 720px; /* ความกว้างสูงสุดของกรอบวิดีโอลดลง */
+    margin: auto; /* ตั้งกลาง */
+    padding-top: 56.25%; /* อัตราส่วน 16:9 */
+    background-color: #000; /* สีพื้นหลังของกรอบวิดีโอ */
+    border-radius: 15px; /* มุมโค้งมน */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* เพิ่มเงา */
+    overflow: hidden; /* ทำให้แน่ใจว่าวิดีโอไม่ล้นออกมา */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มเอฟเฟกต์เคลื่อนไหว */
+}
+
+#video-container:hover {
+    transform: scale(1.02); /* ขยายกรอบเมื่อวางเมาส์ */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9); /* ขยายเงาเมื่อวางเมาส์ */
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* ปรับความสูงให้เต็มกรอบ */
+    border: none;
+    border-radius: 15px; /* มุมโค้งมน */
+}
+
+/* ปุ่มย้อนกลับ */
+.back-button {
+    background-color: #00bcd4; /* ฟ้าคราม */
+    color: #121212; /* สีข้อความดำ */
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute; /* ตั้งตำแหน่งของปุ่ม */
+    top: 20px;
+    left: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* เพิ่มเอฟเฟกต์เคลื่อนไหว */
+}
+
+.back-button:hover {
+    background-color: #0097a7; /* ฟ้าครามเข้ม */
+    transform: scale(1.05); /* ขยายปุ่มเมื่อวางเมาส์ */
+}
